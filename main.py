@@ -26,10 +26,16 @@ units = []
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
 def showarsenal():
-    for a in arsenal_dict.keys:
+    mvm = arsenal_dict.keys()
+    for a in mvm:
         print(a, arsenal_dict[a])
     whichtoget = input('If you want to see a detailed information, type in the key.')
-    for
+    weapon_being_shown = arsenal_dict[int(whichtoget)]
+    for i in metaunits_dict:
+        for a in i:
+            if a == weapon_being_shown:
+                for v in i:
+                    print(v)
 def showms():
     print('')
     print('')
@@ -44,3 +50,4 @@ def showms():
         showbuild()
     else:
         pass
+showms()
