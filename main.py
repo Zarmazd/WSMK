@@ -14,28 +14,37 @@ metaunits_dict = {}
 
 unit_dict_key = 0
 unit_dict = {
-    'unit_name': 'CZ38',
-    'unit_type': 'Pistol',
-    'unit_ammo': '9x17mm - .380 ACP',
-    'unit_base-attack': 45,
-    'unit_expense': 5
+    'Name': 'CZ38',
+    'Type': 'Pistol',
+    'Ammo used': '9x17mm(or .380 ACP)',
+    'Base attack': 45,
+    'Supplies spending': 5
 }
-metaunits_dict[unit_dict_key] = unit_dict
+metaunits_dict[str(unit_dict_key)] = unit_dict
 
 units = []
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
 def showarsenal():
-    mvm = arsenal_dict.keys()
-    for a in mvm:
-        print(a, arsenal_dict[a])
+    for a in arsenal_dict:
+        print(a, '-', arsenal_dict[a])
     whichtoget = input('If you want to see a detailed information, type in the key.')
     weapon_being_shown = arsenal_dict[int(whichtoget)]
-    for i in metaunits_dict:
-        for a in i:
-            if a == weapon_being_shown:
-                for v in i:
-                    print(v)
+    for usedkey in metaunits_dict:
+        shown = False
+        if shown is False:
+            dwo = metaunits_dict[usedkey]
+            if dwo['Name'] == weapon_being_shown:
+                print('')
+                shown = True
+                for a in dwo:
+                    print(a, '-', dwo[a])
+        vsm = input('If you want to return to the main menu, type 1. If you want to return to the arsenal, print 2.')
+        if vsm == '1':
+            showms()
+        elif vsm == '2':
+            showarsenal()
+        break
 def showms():
     print('')
     print('')
@@ -51,3 +60,4 @@ def showms():
     else:
         pass
 showms()
+def showbuild():
