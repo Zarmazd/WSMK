@@ -18,7 +18,8 @@ unit_dict = {
     'Type': 'Pistol',
     'Ammo used': '9x17mm(or .380 ACP)',
     'Base attack': 45,
-    'Supplies': 5
+    'Supplies': 5,
+    rarity: common
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
@@ -27,7 +28,8 @@ unit_dict = {
      'Type': 'Pistol',
      'Ammo used': '.360 Mars',
      'Base attack': 52, 
-     'Supplies': 7
+     'Supplies': 7,
+     rarity: rare
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
@@ -36,10 +38,13 @@ unit_dict = {
      'Type': 'Pistol',
      'Ammo used': '9.65x23mm Browning',
      'Base attack': 48,
-     'Supplies': 6
+     'Supplies': 6,
+     rarity: epic
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
-
+common = 'Common'
+rare = 'Rare'
+epic = 'Epic'
 units = []
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
