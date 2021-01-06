@@ -58,9 +58,7 @@ units.append('Mars Auto .36')
 units.append('FN Grand')
 units.append('MP 3008')
 arsenal_dict = {}
-arsenal_dict[0] = 'CZ38'
-arsenal_dict[1] = 'Mars Auto .36'
-
+current_num = 0
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
@@ -99,3 +97,4 @@ def showms():
     else:
         pass
 showms()
+
