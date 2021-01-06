@@ -42,14 +42,25 @@ unit_dict = {
      rarity: epic
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
+unit_dict_key += 1
+unit_dict = {
+     'Name': 'MP 3008',
+     'Type': 'Submachine gun',
+     'Ammo used': '9x19 Para', 
+     'Base attack': 35,
+     'Supplies': 9,
+     rarity: rare
+}
+metaunits_dict[str(unit_dict_key)] = unit_dict
 common = 'Common'
 rare = 'Rare'
 epic = 'Epic'
 units = []
+units.append('CZ38')
+units.append('Mars Auto .36')
+units.append('FN Grand')
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
-arsenal_dict[1] = 'Mars Auto .36'
-arsenal_dict[2] = 'FN Grand'
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
@@ -60,10 +71,15 @@ def showarsenal():
         if shown is False:
             dwo = metaunits_dict[usedkey]
             if dwo['Name'] == weapon_being_shown:
+                msk = 0
                 print('')
                 shown = True
                 for a in dwo:
-                    print(a, '-', dwo[a])
+                msk += 1
+                if msk <= 6;
+                     print(a, '-', dwo[a])
+                else:
+                     break
         vsm = input('If you want to return to the main menu, type 1. If you want to return to the arsenal, print 2.')
         if vsm == '1':
             showms()
