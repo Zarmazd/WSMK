@@ -18,13 +18,33 @@ unit_dict = {
     'Type': 'Pistol',
     'Ammo used': '9x17mm(or .380 ACP)',
     'Base attack': 45,
-    'Supplies spending': 5
+    'Supplies': 5
+}
+metaunits_dict[str(unit_dict_key)] = unit_dict
+unit_dict_key += 1
+unit_dict = {
+     'Name': 'Mars Auto .36',
+     'Type': 'Pistol',
+     'Ammo used': '.360 Mars',
+     'Base attack': 52, 
+     'Supplies': 7
+}
+metaunits_dict[str(unit_dict_key)] = unit_dict
+unit_dict_key += 1
+unit_dict = {
+     'Name': 'FN Grand', 
+     'Type': 'Pistol',
+     'Ammo used': '9.65x23mm Browning',
+     'Base attack': 48,
+     'Supplies': 6
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 
 units = []
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
+arsenal_dict[1] = 'Mars Auto .36'
+arsenal_dict[2] = 'FN Grand'
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
