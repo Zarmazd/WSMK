@@ -19,7 +19,7 @@ unit_dict = {
     'Ammo used': '9x17mm(or .380 ACP)',
     'Base attack': 45,
     'Supplies': 5,
-    rarity: common
+    'Rarity': 'Common'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
@@ -29,7 +29,7 @@ unit_dict = {
      'Ammo used': '.360 Mars',
      'Base attack': 52, 
      'Supplies': 7,
-     rarity: rare
+     'Rarity': 'Rare'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
@@ -39,7 +39,7 @@ unit_dict = {
      'Ammo used': '9.65x23mm Browning',
      'Base attack': 48,
      'Supplies': 6,
-     rarity: epic
+     'Rarity': 'Epic'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
@@ -49,18 +49,17 @@ unit_dict = {
      'Ammo used': '9x19 Para', 
      'Base attack': 35,
      'Supplies': 9,
-     rarity: rare
+     'Rarity': 'Rare'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
-common = 'Common'
-rare = 'Rare'
-epic = 'Epic'
 units = []
 units.append('CZ38')
 units.append('Mars Auto .36')
 units.append('FN Grand')
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
+
+
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
@@ -75,17 +74,19 @@ def showarsenal():
                 print('')
                 shown = True
                 for a in dwo:
-                msk += 1
-                if msk <= 6;
-                     print(a, '-', dwo[a])
-                else:
-                     break
+                    msk += 1
+                    if msk <= 6:
+                        print(a, '-', dwo[a])
+                    else:
+                        break
         vsm = input('If you want to return to the main menu, type 1. If you want to return to the arsenal, print 2.')
         if vsm == '1':
             showms()
         elif vsm == '2':
             showarsenal()
         break
+
+        
 def showms():
     print('')
     print('')
@@ -101,4 +102,3 @@ def showms():
     else:
         pass
 showms()
-def showbuild():
