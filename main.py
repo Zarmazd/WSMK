@@ -56,37 +56,34 @@ units = []
 units.append('CZ38')
 units.append('Mars Auto .36')
 units.append('FN Grand')
+units.append('MP 3008')
 arsenal_dict = {}
 arsenal_dict[0] = 'CZ38'
-
+arsenal_dict[1] = 'Mars Auto .36'
 
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
     whichtoget = input('If you want to see a detailed information, type in the key.')
+    print('')
     weapon_being_shown = arsenal_dict[int(whichtoget)]
-    for usedkey in metaunits_dict:
-        shown = False
-        if shown is False:
-            dwo = metaunits_dict[usedkey]
-            if dwo['Name'] == weapon_being_shown:
-                msk = 0
-                print('')
-                shown = True
-                for a in dwo:
-                    msk += 1
-                    if msk <= 6:
-                        print(a, '-', dwo[a])
-                    else:
-                        break
-        vsm = input('If you want to return to the main menu, type 1. If you want to return to the arsenal, print 2.')
-        if vsm == '1':
-            showms()
-        elif vsm == '2':
-            showarsenal()
-        break
-
-        
+    for key in metaunits_dict:
+        dict_being_shown = metaunits_dict[key]
+        if dict_being_shown['Name'] == weapon_being_shown:
+            for a in dict_being_shown:
+                print(a + ':', dict_being_shown[a])
+        else:
+            pass
+    print('')
+    wksp = input('If you want to return to the arsenal, print 1. If you want to return to the main screen, print 2.')
+    wksp = int(wksp)
+    if wksp == 1:
+        showarsenal()
+    elif wksp == 2:
+        showms()
+    else:
+        print('Unknown code. Returning to the main screen...')
+        showms()
 def showms():
     print('')
     print('')
