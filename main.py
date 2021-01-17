@@ -67,18 +67,21 @@ units = []
 units.append('CZ38')
 units.append('Mars Auto .36')
 units.append('FN Grand')
-units.append('MP 3008')
+units.append('MP-3008')
 arsenal_dict = {}
-current_number = 0
+arsenal_dict[0] = 'CZ38'
 
 
 def add_weapon(weapon_name):
-    arsenal_dict[current_number] = weapon_name
-    current_number += 1
+    lastkey = 0
+    for key in arsenal_dict:
+        lastkey = key
+    lastkey += 1
+    arsenal_dict[lastkey] = weapon_name
 
 
-add_weapon('CZ38')
-add_weapon('FN Grand')
+add_weapon('Mars Auto .36')
+add_weapon('MP-3008')
 
 
 def showarsenal():
