@@ -85,7 +85,6 @@ def showarsenal():
 def showms():
     print('')
     print('')
-    print('')
     print('Current amount of supplies:', supplies_amount)
     print('To see the arsenal, print 1')
     print('To get to the weapon building facility, print 2')
@@ -98,3 +97,4 @@ def showms():
         pass
 showms()
 
+# This one is...experimental, probably. Will create a new branch.
