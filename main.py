@@ -16,40 +16,51 @@ unit_dict_key = 0
 unit_dict = {
     'Name': 'CZ38',
     'Type': 'Pistol',
-    'Ammo used': '9x17mm(or .380 ACP)',
+    'Ammo used': '.380 ACP',
     'Base attack': 45,
+    'Capacity': 9,
+    'Accuracy': 0.7,
     'Supplies': 5,
     'Rarity': 'Common'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
 unit_dict = {
-     'Name': 'Mars Auto .36',
-     'Type': 'Pistol',
-     'Ammo used': '.360 Mars',
-     'Base attack': 52, 
-     'Supplies': 7,
-     'Rarity': 'Rare'
+    'Name': 'Mars Auto .36',
+    'Type': 'Pistol',
+    'Ammo used': '.360 Mars',
+    'Base attack': 43,
+    'Base defense': 6,
+    'Capacity': 10,
+    'Accuracy': 0.65,
+    'Supplies': 7,
+    'Rarity': 'Rare'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
 unit_dict = {
-     'Name': 'FN Grand', 
-     'Type': 'Pistol',
-     'Ammo used': '9.65x23mm Browning',
-     'Base attack': 48,
-     'Supplies': 6,
-     'Rarity': 'Epic'
+    'Name': 'FN Grand',
+    'Type': 'Pistol',
+    'Ammo used': '9.65x23mm Browning',
+    'Base attack': 48,
+    'Base defense': 4,
+    'Capacity': 8,
+    'Accuracy': 0.7,
+    'Supplies': 6,
+    'Rarity': 'Epic'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 unit_dict_key += 1
 unit_dict = {
-     'Name': 'MP 3008',
-     'Type': 'Submachine gun',
-     'Ammo used': '9x19 Para', 
-     'Base attack': 35,
-     'Supplies': 9,
-     'Rarity': 'Rare'
+    'Name': 'MP-3008',
+    'Type': 'Submachine gun',
+    'Ammo used': '9x19 Para',
+    'Base attack': 35,
+    'Base defense': 5,
+    'Capacity': 32,
+    'Accuracy': 0.4,
+    'Supplies': 13,
+    'Rarity': 'Rare'
 }
 metaunits_dict[str(unit_dict_key)] = unit_dict
 units = []
@@ -58,11 +69,22 @@ units.append('Mars Auto .36')
 units.append('FN Grand')
 units.append('MP 3008')
 arsenal_dict = {}
-current_num = 0
+current_number = 0
+
+
+def add_weapon(weapon_name):
+    arsenal_dict[current_number] = weapon_name
+    current_number += 1
+
+
+add_weapon('CZ38')
+add_weapon('FN Grand')
+
+
 def showarsenal():
     for a in arsenal_dict:
         print(a, '-', arsenal_dict[a])
-    whichtoget = input('If you want to see a detailed information, type in the key.')
+    whichtoget = input('If you want to see a detailed information, type in the key. ')
     print('')
     weapon_being_shown = arsenal_dict[int(whichtoget)]
     for key in metaunits_dict:
@@ -98,3 +120,14 @@ def showms():
 showms()
 
 # This one is...experimental, probably. Will create a new branch.
+#def battlestat_search(unit):
+    #for key in metaunits_dict:
+        #dict_shown = metaunits_dict[key]
+        #if dict_shown['Name'] == unit:
+            #for a in dict_shown:
+
+#def shootout1(first, second):
+
+
+    #for key in metaunits_dict:
+        #dict_show =
