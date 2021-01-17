@@ -17,6 +17,7 @@ unit_dict = {
     'Name': 'CZ38',
     'Type': 'Pistol',
     'Ammo used': '.380 ACP',
+    'Base health': 500,
     'Base attack': 45,
     'Capacity': 9,
     'Accuracy': 0.7,
@@ -29,6 +30,7 @@ unit_dict = {
     'Name': 'Mars Auto .36',
     'Type': 'Pistol',
     'Ammo used': '.360 Mars',
+    'Base health': 650,
     'Base attack': 43,
     'Base defense': 6,
     'Capacity': 10,
@@ -42,6 +44,7 @@ unit_dict = {
     'Name': 'FN Grand',
     'Type': 'Pistol',
     'Ammo used': '9.65x23mm Browning',
+    'Base health': 550,
     'Base attack': 48,
     'Base defense': 4,
     'Capacity': 8,
@@ -55,6 +58,7 @@ unit_dict = {
     'Name': 'MP-3008',
     'Type': 'Submachine gun',
     'Ammo used': '9x19 Para',
+    'Base health': 800,
     'Base attack': 35,
     'Base defense': 5,
     'Capacity': 32,
@@ -69,7 +73,7 @@ units.append('Mars Auto .36')
 units.append('FN Grand')
 units.append('MP-3008')
 arsenal_dict = {}
-arsenal_dict[0] = 'CZ38'
+arsenal_dict[1] = 'CZ38'
 
 
 def add_weapon(weapon_name):
@@ -123,14 +127,35 @@ def showms():
 showms()
 
 # This one is...experimental, probably. Will create a new branch.
-#def battlestat_search(unit):
-    #for key in metaunits_dict:
-        #dict_shown = metaunits_dict[key]
-        #if dict_shown['Name'] == unit:
-            #for a in dict_shown:
+def battlestat_search(unit):
+    result = []
+    for key in metaunits_dict:
+        dict_shown = metaunits_dict[key]
+        if dict_shown['Name'] == unit:
+            for a in dict_shown:
+                if a == 'Base health':
+                    result.append(dict_shown[a])
+                elif a == 'Base attack':
+                    result.append(dict_shown[a])
+                elif a == 'Base defense':
+                    result.append(dict_shown[a])
+                elif a == 'Capacity':
+                    result.append(dict_shown[a])
+                elif a == 'Accuracy':
+                    result.append(dict_shown[a])
+                else:
+                    pass
+        else:
+            pass
+        return result
 
-#def shootout1(first, second):
+def shootout1(first, second):
+    first_stat = battlestat_search(first)
+    second_stat = battlestat_search(second)
+    fsf = False
+    fsf_num = random.randint(1,2)
+    if fsf_num == 1:
+        fsf = True
+    else:
+        fsf = False
 
-
-    #for key in metaunits_dict:
-        #dict_show =
